@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+
+    <title>SBOL Designer | Documentation</title>
+
+    <link rel="shortcut icon" href="http://www.async.ece.utah.edu/wp-content/themes/umctheme/images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/stroke.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="js/syntax-highlighter/styles/shCore.css" media="all">
+    <link rel="stylesheet" type="text/css" href="js/syntax-highlighter/styles/shThemeRDark.css" media="all">
+
+    <!-- CUSTOM -->
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <div class="container">
+
+            <section id="top" class="section docs-heading">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="big-title text-center">
+                            <h1>SBOLDesigner Documentation</h1>
+                            <p class="lead">Eric Yu</p>
+                        </div>
+                        <!-- end title -->
+                    </div>
+                    <!-- end 12 -->
+                </div>
+                <!-- end row -->
+
+                <hr>
+
+            </section>
+            <!-- end section -->
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <nav class="docs-sidebar" data-spy="affix" data-offset-top="300" data-offset-bottom="200" role="navigation">
+                        <ul class="nav">Contents
+                            <li><a href="#line1">Getting Started</a></li>
+                            <li><a href="#line2">Basic Features</a></li>
+                            <li><a href="#line3">Importing from Repositories</a></li>
+                            <li><a href="#line4">Uploading to an Online Repository</a></li>
+                            <li><a href="#line5">Exporting to Other File Formats</a></li>
+                            <!-- <li><a href="#line6">Formats</a></li>
+                            <li><a href="#line7">How to Use Option Panel</a>
+                                <ul class="nav">
+                                    <li><a href="#line7_1">General Options</a></li>
+                                    <li><a href="#line7_2">Style Options</a></li>
+                                    <li><a href="#line7_3">Header Options</a></li>
+                                    <li><a href="#line7_4">Font Options</a></li>
+                                    <li><a href="#line7_5">Slider Options</a></li>
+                                    <li><a href="#line7_6">Page Options</a></li>
+                                    <li><a href="#line7_7">Import & Export</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#line8">Support Desk</a></li>
+                            <li><a href="#line9">Files & Sources</a></li>
+                            <li><a href="#line10">Version History (Changelog)</a></li> -->
+                            <li><a href="#line11">Copyright and license</a></li>
+                        </ul>
+                    </nav >
+                </div>
+                <div class="col-md-9">
+                    <section class="welcome">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Introduction<hr></h2>
+                                <div class="row">
+                                    <p>SBOLDesigner is a simple, biologist-friendly CAD software tool for creating and manipulating the sequences of genetic constructs using the <a href="http://www.sbolstandard.org/">Synthetic Biology Open Language</a>  (SBOL) 2.2 data model.  
+                                        Throughout the design process, SBOL Visual symbols, a system of schematic glyphs, provide standardized visualizations of individual parts.  SBOLDesigner completes a workflow for users of genetic design automation tools.  
+                                        It combines a simple user interface with the power of the SBOL standard and serves as a launchpad for more detailed designs involving simulations and experiments.  
+                                        Some features in SBOLDesigner are SynBioHub integration, local repositories, importing of parts/sequences from existing files, import and export of GenBank and FASTA files, 
+                                        extended role ontology support, the ability to partially open designs with multiple root ComponentDefinitions, backward compatibility with SBOL 1.1, and versioning.</p>
+                                    <div class="col-md-12 full">
+                                        <div class="intro1">
+                                            <ul>
+                                                <li><strong>Version : </strong> v 3.0</li>
+                                                <li><strong>Created by the </strong> <a href="http://www.async.ece.utah.edu/SBOLDesigner" target="_blank">Myers Research Group</a></li>
+                                                <li><strong>GitHub Repository : </strong> <a href="https://github.com/SynBioDex/SBOLDesigner" target="_blank">https://github.com/SynBioDex/SBOLDesigner</a></li>
+                                                <li><strong>Download : </strong> <a href="https://github.com/SynBioDex/SBOLDesigner/releases/download/v3.0/SBOLDesigner-3.0.jar" target="_blank">JAR File</a></li>
+                                                <li><strong>Readme : </strong><a href="https://github.com/SynBioDex/SBOLDesigner/blob/master/README.md" target="_blank">README.md</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <hr>
+                                        <div>
+
+                                            <h4>Requirements</h4>
+                                            <p>You must have the Java JRE installed on your computer. If you do not, go <a href="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html" target="_blank">here</a> to download the latest version for your operating system.</p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- end row -->
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="line1" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Getting Started <a href="#top">#back to top</a><hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>Before beginning to use SBOL Designer, go to your preferences and change your <strong>name</strong>, <strong>email</strong>, and <strong>URI</strong> to something unique.</p>
+
+                                <h4>Preferences Screen</h4>
+
+                            <div class="container">
+                                <img src="SBOLpref.png">
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+                    </section>
+                    <!-- end section -->
+                    <section id="line2" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Basic Features <a href="#top">#back to top</a></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <hr>
+
+                        <h4>Tutorial Video</h4>
+
+                        <p>If you are new to SBOLDesigner, watch this tutorial video. It will demonstrate how to construct a basic toggle switch.</p>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">
+                                <div class="media">
+                                    <iframe width="560" height="315" src="https://drive.google.com/file/d/1-ZVYJs0pGFOcNeSAZIHl4zsFfa1I3t2G/preview" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+
+                            <div class="row">
+                                <hr>
+                                <h4>Main Screen</h4>
+                                <div class="container">
+                                    <img src="SBOLmain.png">
+                                    <p>This is the main screen of SBOLDesigner. The top bar comprises of functions such as saving and exporting, while the bottom bar holds parts available for use.</p>
+                                </div>
+                            </div>
+                    
+                    </section>
+                    <!-- end section -->
+
+                    <section id="line3" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Importing from Repositories <a href="#top">#back to top</a><hr></h2>
+                            </div>
+
+                            <div>
+
+                                <img src="SBOL2click.png">
+                                <p>Double click on a part to view its details and to import from a registry.</p>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <h4>Importing from an online registry</h4>
+                            <div>
+                                <img src="SBOLreg.png">
+                                <p>Here, you can filter and choose parts from either a local or online repository.</p>
+                            </div>
+
+
+                        <hr>
+                        
+
+                    </section>
+                    <!-- end section -->
+
+                    <section id="line4" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Uploading to an Online Repository <a href="#top">#back to top</a><hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="uploading online/upload_current_or_dock.png" alt="" class="img-responsive img-thumbnail">
+                                <h4>Current design vs Working document</h4>
+                                <p>The current design is the design that open in the canvas, while the working document contains all of the designs saved to it.</p>
+                            </div>
+                            <!-- end col -->
+
+                            <div class="col-md-4">
+                                <img src="uploading online/select_instance.png" alt="" class="img-responsive img-thumbnail">
+                                <h4>Logging in to a repository</h4>
+                                <p>After selecting a repository, you must enter your credentials and log in to be able to upload parts online.</p>
+                            </div>
+                            <!-- end col -->
+
+                            <div class="col-md-4">
+                                <img src="uploading online/upload_design.png" alt="" class="img-responsive img-thumbnail">
+                                <h4>Uploading your design</h4>
+                                <p>Here, you can enter various information about your design before uploading it.</p>
+                            </div>
+                            <!-- end col -->
+
+                            <div class="col-md-12">
+                                <p>If you need additional help, you can watch this tutorial video on how to upload to SynBioHub.</p>
+                                <div class="text-center">
+                                        <div class="media">
+                                                <iframe width="560" height="315" src="https://drive.google.com/file/d/1hAYpfOLXYTAVvJwmkqw2EmGcWcXgugxz/preview" frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+                    </section>
+                    <!-- end section -->
+
+                    <section id="line5" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Exporting to Other File Formats <a href="#top">#back to top</a><hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <p>SBOLDesigner allows you to export to other file formats such as GenBank or FASTA. </p>
+                            </div>
+
+                            <div>
+                                <img src="exporting.png">
+
+                            </div>
+
+                        </div>
+                        <!-- end row -->
+
+                    </section>
+                    <!-- end section -->
+<!-- 
+                    <section id="line6" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">How to Install Revolution Slider <a href="#top">#back to top</a><hr></h2>
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                            </div>
+
+                            <div class="col-md-6">
+                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
+                                <h4>Installation Slider</h4>
+                                <ul>
+                                    <li><strong>Step 1</strong> - Lorem the It is a long established fact that a reader ease read more about WordPress here.</li>
+                                    <li><strong>Step 2</strong> - Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</li>
+                                    <li><strong>Step 3</strong> - Lorem the It is a long established fact that a read.</li>
+                                </ul>
+                            </div>
+
+                            <div class="col-md-6">
+                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
+                                <h4>Updating Slider</h4>
+                                <p>Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</p>
+                                <ul>
+                                    <li><strong>Step 1</strong> - Lorem the It is a long established fact that a reader ease read more about WordPress here.</li>
+                                    <li><strong>Step 2</strong> - Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</li>
+                                    <li><strong>Step 3</strong> - Lorem the It is a long established fact that a read.</li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </section> 
+    -->
+                    <!-- end section -->
+
+                    <!-- <section id="line7" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">How to Use Option Panel <a href="#top">#back to top</a><hr></h2>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
+                            </div>
+
+                            <div class="col-md-8">
+                                <h4 id="line7_1">General Options - <a href="#top">#back to top</a></h4>
+                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
+                            </div>
+
+                            <div class="col-md-8">
+                                <h4 id="line7_2">Style Options - <a href="#top">#back to top</a></h4>
+                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
+                            </div>
+
+                            <div class="col-md-8">
+                                <h4 id="line7_3">Header Options - <a href="#top">#back to top</a></h4>
+                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
+                            </div>
+
+                            <div class="col-md-8">
+                                <h4 id="line7_4">Font Options - <a href="#top">#back to top</a></h4>
+                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
+                            </div>
+
+                            <div class="col-md-8">
+                                <h4 id="line7_5">Slider Options - <a href="#top">#back to top</a></h4>
+                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
+                            </div>
+
+                            <div class="col-md-8">
+                                <h4 id="line7_6">Page Options - <a href="#top">#back to top</a></h4>
+                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
+                            </div>
+
+                            <div class="col-md-8">
+                                <h4 id="line7_7">Import & Export Options - <a href="#top">#back to top</a></h4>
+                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
+                            </div>
+                        </div>
+
+                    </section> -->
+                    <!-- end section -->
+
+                    <!-- <section id="line8" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Support Desk <a href="#top">#back to top</a><hr></h2>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>Please remember you have purchased a very affordable theme and you have not paid for a full-time web design agency. Occasionally we will help with small tweaks, but these requests will be put on a lower priority due to their nature. Support is also 100% optional and we provide it for your connivence, so please be patient, polite and respectful.</p>
+
+                                <p>Please visit our <a href="http://themeforest.net/user/yourusername"><strong>profile page</strong></a> or ask question <a href="mailto:yourusername@gmail.com">@yourusername</a></p>
+
+                                <strong>Support for my items includes:</strong>
+                                <ul>
+                                    <li>* Responding to questions or problems regarding the item and its features</li>
+                                    <li>* Fixing bugs and reported issues</li>
+                                    <li>* Providing updates to ensure compatibility with new software versions</li>
+                                </ul>
+                                <strong>Item support does not include:</strong>
+                                <ul>
+                                    <li>* Customization and installation services</li>
+                                    <li>* Support for third party software and plug-ins</li>
+                                </ul>
+
+                            </div>
+
+                            <div class="col-md-6">
+                                <strong>Before seeking support, please...</strong>
+                                <ul>
+                                    <li>* Make sure your question is a valid Theme Issue and not a customization request.</li>
+                                    <li>* Make sure you have read through the documentation and any related video guides before asking support on how to accomplish a task.</li>
+                                    <li>* Make sure to double check the theme FAQs.</li>
+                                    <li>* Try disabling any active plugins to make sure there isn't a conflict with a plugin. And if there is this way you can let us know.</li>
+                                    <li>* If you have customized your theme and now have an issue, back-track to make sure you didn't make a mistake. If you have made changes and can't find the issue, please provide us with your changelog.</li>
+                                    <li>* Almost 80% of the time we find that the solution to people's issues can be solved with a simple "Google Search". You might want to try that before seeking support. You might be able to fix the issue yourself much quicker than we can respond to your request.</li>
+                                    <li>* Make sure to state the name of the theme you are having issues with when requesting support via ThemeForest.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </section> -->
+                    <!-- end section -->
+
+                    <!-- <section id="line9" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Files & Sources <a href="#top">#back to top</a><hr></h2>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong>Included Stylesheets</strong>
+
+                                <p>These are the primary CSS files used for general front-end styling. Use these to customize your theme even further. All included JavaScript codes under <strong>yourthemename/css/</strong></p>
+
+                                <ul>
+                                    <li>1. style.css - Primary stylesheet</li>
+                                    <li>2. bootstrap.css - Bootstrap stylesheet</li>
+                                    <li>3. owl-carousel.css - OWL Carousel</li>
+                                    <li>4. fontawesome.css - FontAwesome Font Icons stylesheet</li>
+                                    <li>5. custom.css - Pathos Color Schemes stylesheet</li>
+                                    <li>6. prettyPhoto.css - Lightbox effect css file</li>
+                                    <li>7. flexslider.css - Flexslider css file</li>
+                                    <li>8. et-line.css - Elegant icons css file</li>
+                                    <li>9. carousel.css - OWL Carousel css file</li>
+                                    <li>10. animate.css - CSS3 animations css file</li>
+                                </ul>
+
+                            </div>
+
+                            <div class="col-md-6">
+                                <strong>Included JavaScript</strong>
+
+                                <p>These are the various attribution inks to the Javascript files included or modified to work with in this theme. All included JavaScript codes under <strong>yourthemename/js/</strong></p>
+
+                                <ul>
+                                    <li>1. bootstrap.js - Bootstrap JavaScript</li>
+                                    <li>2. custom.js - All JavaScript Plugins</li>
+                                    <li>3. retina.js - Retina JavaScript</li>
+                                    <li>4. jquery.js - Base JavaScript</li>
+                                    <li>5. prettyPhoto.js - Lightbox JavaScript</li>
+                                    <li>6. owl-carousel.js - Lightbox JavaScript</li>
+                                    <li>7. revslider.js - Revolution Slider JavaScript</li>
+                                    <li>8. flexslider.js - Flexslider JavaScript</li>
+                                    <li>9. awesome-grid.nin.js - Awesome grid portfolio JavaScript</li>
+                                    <li>10. circle.js - Coming soon page JavaScript</li>
+                                    <li>11. contact.js - Contact form validate JavaScript</li>
+                                    <li>12. isotope.js - Masonry Portfolio JavaScript</li>
+                                    <li>13. progress.js - Progress bar JavaScript</li>
+                                    <li>14. rotate.js - Text rotate effect JavaScript</li>
+                                    <li>15. wow.js - CSS3 animation JavaScript</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </section> -->
+                    <!-- end section -->
+
+                    <!-- <section id="line10" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Version History (Changelog) <a href="#top">#back to top</a><hr></h2>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <p>You can find the version history (changelog.txt) file on <strong>yourthemename-full.zip</strong> folder or you can check changelog on theme sale page.</p>
+                                <p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p>
+
+                                <hr>
+
+                                <h4>Changelog</h4>
+
+                                <pre class="brush: html">
+
+                                        -----------------------------------------------------------------------------------------
+                                        Version 3.8.4 - May 7th, 2015
+                                        -----------------------------------------------------------------------------------------
+
+                                        - new revolution slider plugin version
+                                        - fixed security issue with xss vulnerability
+                                        - improved demo importer for certain server environments
+                                        - updated WooCommerce template files for the outdated message in system status
+                                        - added suhosin check in system status 
+                                        - added information that explains ZipArchive is required on your server for importing demos 
+                                        - portfolio Grid template improvement
+                                        - added more information to demo popup message for individual demo requirements
+                                        - RTL style improvements
+                                        - breadcrumb function improved for various areas
+
+                                        -----------------------------------------------------------------------------------------
+                                        Version 3.8.3 - May 7th, 2015
+                                        -----------------------------------------------------------------------------------------
+                                        - fixed responsive / retina issue for larger logos
+                                        - fusion slider now uses responsive headings all the time
+                                        - dropped custom Avada styles for select boxes in IE since it is not supported
+                                        - fixed compatibility issue with Category Order and Taxonomy Terms Order plugin
+                                        - fixed issue of full width background being affected by padding options
+                                        - tested and fixed hellobar issue 
+                                        - typography settings now apply to single post pages
+                                        - improved smooth scroll in certain situations
+                                        - youtube & vimeo videos will show at normal size in light box as long as video embed link is not used
+                                        - fixed issue of â€œfixedâ€ featured image mode not working for carousels / recent work
+                                        - fixed issue of header tagline font not working with font options
+
+                                        -----------------------------------------------------------------------------------------
+                                        Version 3.8.2 - May 7th, 2015
+                                        -----------------------------------------------------------------------------------------
+                                        - fixed formatting issues with Turkish language files 
+                                        - letter spacing menu option improvement
+                                        - improved fusion slider max content width setting
+                                        - removed the â€œdisable first featured image on productsâ€ setting since it does not apply
+                                        - improved portfolio featured image loading
+                                        - removed encoding from tracking code, space before head, space before body, and custom CSS to stop it from parsing code within TO and removing special characters e.g. +
+                                        - woo login box now shows login fields for logged out users
+                                        - woo cart / my account links now show on mobile 
+                                        - fixed button styling issue with gravity forms
+
+
+                                      </pre>
+
+                            </div>
+                        </div>
+
+                    </section> -->
+                    <!-- end section -->
+
+                    <section id="line11" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Copyright and license <a href="#top">#back to top</a><hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                
+                                <p>SBOLDesigner is released under the <a href="https://github.com/SynBioDex/SBOLDesigner/blob/master/LICENSE.txt" target="_blank">Apache 2.0</a> License.</p>                        
+                                <p>For more information about the Apache license go to <a href="http://www.apache.org/licenses/" target="_blank">apache.org/licenses/</a>.</p>
+                            
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+                    </section>
+                    <!-- end section -->
+                </div>
+                <!-- // end .col -->
+
+            </div>
+            <!-- // end .row -->
+    
+        </div>
+        <!-- // end container -->
+
+    </div>
+    <!-- end wrapper -->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/retina.js"></script>
+    <script src="js/jquery.fitvids.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+
+    <!-- CUSTOM PLUGINS -->
+    <script src="js/custom.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="js/syntax-highlighter/scripts/shCore.js"></script>
+    <script src="js/syntax-highlighter/scripts/shBrushXml.js"></script>
+    <script src="js/syntax-highlighter/scripts/shBrushCss.js"></script>
+    <script src="js/syntax-highlighter/scripts/shBrushJScript.js"></script>
+
+</body>
+
+</html>
